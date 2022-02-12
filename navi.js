@@ -1,4 +1,4 @@
-let taslar = ["t0","t1","t2","t3","t4","t5","t6","t7","t8"]
+﻿let taslar = ["t0","t1","t2","t3","t4","t5","t6","t7","t8"]
 
 function tasBul(val){
 
@@ -67,6 +67,8 @@ function pushed(id){
     switch (id){
 	case "t0":
 		window.location.href = './map.html';
+//		window.location.href = './map_gmap.html';
+//		window.location.href = './gmaps.html';
 		break;
 
 	case "t1":

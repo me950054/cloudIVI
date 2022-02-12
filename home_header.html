@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -24,15 +24,8 @@
 
             <div id="header" style="font-size: 3rem; color: white; text-align: right">
 
-		<p id="eid_date">aaaaaaaaa</p>
-		<script>
-			let d = new Date();
+			<iframe src="./header.html" width="500" height="90" frameborder="0"></iframe>
 
-			var hour = d.getHours();
-			var min = d.getMinutes();
- 
-			document.getElementById('eid_date').innerHTML = hour + ":" + min;
-		</script>
 			<hr color= "gray">
 		<br />
 
@@ -53,7 +46,7 @@
 		 <button id="t1" class="btn btn-secondary tile" onclick="pushed(this.id)" >
 			<i class="bi-broadcast-pin" style="font-size: 4rem; color: white;"></i>
 			<br />
-			RADIO
+			AM
 		</button>
 		<button id="t2" class="btn btn-secondary tile" onclick="pushed(this.id)" >
 			<i class="bi-music-note-list" style="font-size: 4rem; color: white;"></i>
@@ -86,50 +79,33 @@
         </center>
             </div>
 
-
-
       <div class="col col-sm-2"  style="background-color:black; font-size: 3rem; color: white; vertical-align: middle;">
     	<center>
-    <table style="width: 100%;">
-      <tbody>
-          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
-          <td>
+         <div id="button">
 		 <button id="t6" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
 			<i class="bi-house-door" style="font-size: 4rem; color: white;"></i>
-		 </button>
-          </td>
-          </tr>
-
-          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
-          <td>
+		</button>
+        </div>
+         <div id="button">
 		 <button id="t6" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
 			<i class="bi-arrow-return-left" style="font-size: 4rem; color: white;"></i>
 		</button>
-          </td>
-          </tr>
-
-          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
-          <td>
+        </div>
+         <div id="button">
 		 <button id="t4" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
 			<i class="bi-google" style="font-size: 4rem; color: white;"></i>
 		</button>
-          </td>
-          </tr>
-
-          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
-          <td>
+        </div>
+         <div id="button">
 		 <button id="t0" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
 			<i class="bi-geo-alt-fill" style="font-size: 4rem; color: white;"></i>
 		</button>
-          </td>
-          </tr>
+        </div>
 
-      </tbody>
-    </table>
-    	</center>
+        </center>
+        </div>
       </div>
-      </div>
-      </div>
+
 
     </body>
 

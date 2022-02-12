@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 
@@ -20,56 +20,265 @@
 
     <body style="background-color:black; color:white;">
         
-	<center>
 
-            <div id="header">
+    <div id="header" style="font-size: 3rem; color: white; text-align: right">
 
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-            </div>
+		<p id="eid_date">aaaaaaaaa</p>
+		<script>
+			let d = new Date();
 
-            <div id="audio">
+			var hour = d.getHours();
+			var min = d.getMinutes();
+ 
+			document.getElementById('eid_date').innerHTML = hour + ":" + min;
+		</script>
+			<hr color= "gray">
 
-                AUDIO
+    </div>
 
-            </div>
+	<div class="container">
 
-            <div id="button">
+<table id="file" style="width: 100%; border:solid; border-width:thin; border-color:gray;">
+  <tbody>
+    <tr>
+      <td  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; ">
+          	<center>
+    	<input type="file" id="file" name="upfile[]" webkitdirectory />
+      	<div id="list"></div>
+	    <script>
+		document.getElementById("file").addEventListener("change", ev => {
+		  for (let i = 0; i < ev.target.files.length; i++) {
+		    let file = ev.target.files[i];
 
-		 <button id="t6" class="btn btn-secondary tile" onclick="pushed(this.id)" >
-			<i class="bi-house-door" style="font-size: 4rem; color: white;"></i>
-		</button>
-            </div>
+		    // ディレクトリの相対パス
+		    let relativePath = file.webkitRelativePath;
 
-            <div id="footer">
-
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-
-            </div>
-
+		    // ここではテキストファイルとして読み出してみる.
+		    let fileReader = new FileReader();
+		    fileReader.onload = (function(theFile) {
+		      return function(e) {
+		        // Render thumbnail.
+		        var figure = document.createElement("figure");
+		        figure.innerHTML = `
+		          <figcaption>${theFile.name}</figcaption>
+		         `;
+		        document.getElementById("list").insertBefore(figure, null);
+		      };
+		    })(file);
+		    
+		    fileReader.readAsDataURL(file);
+		  }
+		});
+	    </script>     
         </center>
+      </td>
+      <td  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; "></td>
+      <td  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; "></td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+
+	<div class="container">
+        <div class="row">
+             <div class="col-xl"  style="background-color:black; font-size: 3rem; color: white;">
+
+        <table id="replay" style="width: 100%; border:solid; border-width:thin; border-color:gray;">
+          <tbody>
+            <tr>
+              <td  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: left;">
+                     Stay Gold<BR>
+  	      <hr color= "gray">
+             Hi-STANDARD<BR>
+  	      <hr color= "gray">
+             Making The Road<BR>
+  	      <hr color= "gray">
+             FileFormat
+              </td>
+              <td  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+    			<img src="./110.jpg" width="250" height="250" frameborder="0"></img>
+              </td>
+          </tbody>
+        </table>
+
+        <table id="replay" style="width: 100%; border:solid; border-width:thin; border-color:gray;">
+          <tbody>
+            <tr>
+              <td  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+              <p><time id="playback_position">0:30</time><input type="range" id="progress" value="0" min="0" step="1"><time id="end_position">1:24</time></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+ 
+            </div>
+
+      <div class="col col-sm-2"  style="background-color:black; font-size: 3rem; color: white; vertical-align: middle;">
+    	<center>
+    <table style="width: 100%;">
+      <tbody>
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t6" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-house-door" style="font-size: 4rem; color: white;"></i>
+		 </button>
+          </td>
+          </tr>
+
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t6" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-arrow-return-left" style="font-size: 4rem; color: white;"></i>
+		</button>
+          </td>
+          </tr>
+
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t4" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-google" style="font-size: 4rem; color: white;"></i>
+		</button>
+          </td>
+          </tr>
+
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t0" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-geo-alt-fill" style="font-size: 4rem; color: white;"></i>
+		</button>
+          </td>
+          </tr>
+
+      </tbody>
+      </table>
+    	</center>
+      </div>
+
+      </div>
+      </div>
+    
+      
+      <div class="container">
+
+<table id="table1" style="width: 100%; border:solid; border-width:thin; border-color:gray;">
+  <tbody>
+    <tr>
+      <td  id="btn_play"  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; border:solid; border-width:thin; border-color:gray;" onclick="clickReplay()">▶</td>
+      <td  id="btn_stop"  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; border:solid; border-width:thin; border-color:gray;" onclick="clickStop()">■</td>
+      <td  id="btn_pause" style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; border:solid; border-width:thin; border-color:gray;" onclick="clickPause()">||</td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+
 
     </body>
+
+<script>
+    function clickReplay() {
+     const bgm1 = document.querySelector("#audiofile");       // <audio>
+     bgm1.play();
+  }
+
+    function clickPause() {
+     const bgm1 = document.querySelector("#audiofile");       // <audio>
+     bgm1.pause();
+  }
+
+    function clickStop() {
+     const bgm1 = document.querySelector("#audiofile");       // <audio>
+     bgm1.currentTime = 0;
+     bgm1.pause();
+  }
+
+</script>
+
+
+<script>
+window.addEventListener('DOMContentLoaded', function(){
+
+  const btn_play = document.getElementById("btn_play");
+  const btn_pause = document.getElementById("btn_pause");
+  const playback_position = document.getElementById("playback_position");
+  const end_position = document.getElementById("end_position");
+  const slider_progress = document.getElementById("progress");
+  const audioElement = document.querySelector("audio");
+
+  var playtimer = null;
+
+  // 再生開始したときに実行
+  const startTimer = function(){
+    playtimer = setInterval(function(){
+      playback_position.textContent = convertTime(audioElement.currentTime);
+      slider_progress.value = Math.floor( (audioElement.currentTime / audioElement.duration) * audioElement.duration);
+    }, 500);
+  };
+
+  // 停止したときに実行
+  const stopTimer = function(){
+    clearInterval(playtimer);
+    playback_position.textContent = convertTime(audioElement.currentTime);
+  };
+
+  // 再生時間の表記を「mm:ss」に整える
+  const convertTime = function(time_position) {
+    
+    time_position = Math.floor(time_position);
+    var res = null;
+
+    if( 60 <= time_position ) {
+      res = Math.floor(time_position / 60);
+      res += ":" + Math.floor(time_position % 60).toString().padStart( 2, '0');
+    } else {
+      res = "0:" + Math.floor(time_position % 60).toString().padStart( 2, '0');
+    }
+
+    return res;
+  };
+
+  // 音声ファイルの再生準備が整ったときに実行
+  audioElement.addEventListener('loadeddata', (e)=> {
+    slider_progress.max = audioElement.duration;
+
+    playback_position.textContent = convertTime(audioElement.currentTime);
+    end_position.textContent = convertTime(audioElement.duration);
+  });
+
+  // 音声ファイルが最後まで再生されたときに実行
+  audioElement.addEventListener("ended", e => {
+    stopTimer();
+  });
+
+  // 再生ボタンが押されたときに実行
+  btn_play.addEventListener("click", e => {
+    audioElement.play();
+    startTimer();
+  });
+
+  // 一時停止ボタンが押されたときに実行
+  btn_pause.addEventListener("click", e => {
+    audioElement.pause();
+    stopTimer();
+  });
+
+  // プログレスバーが操作されたときに実行（メモリを動かしているとき）
+  slider_progress.addEventListener("input", e => {
+    stopTimer();
+    audioElement.currentTime = slider_progress.value;
+  });
+
+  // プログレスバーが操作完了したときに実行
+  slider_progress.addEventListener("change", e => {
+    startTimer();
+  });
+
+});
+</script>
+
+
+<!-- 音声ファイル -->
+<audio id="audiofile" preload loop>
+  <source src="./StayGold.mp3" type="audio/mp3">
+</audio>
 
 </html>

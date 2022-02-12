@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>NAVI</title>
+
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="layout.css">
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+        <script type="text/javascript" src="navi.js"></script>
+
+    </head>
+
+    <body style="background-color:black; color:white;">
+        
+
+    <div id="header" style="background-color:black; font-size: 3rem; color: white;">
+
+		<p id="eid_date">aaaaaaaaa</p>
+		<script>
+			let d = new Date();
+
+			var hour = d.getHours();
+			var min = d.getMinutes();
+ 
+			document.getElementById('eid_date').innerHTML = hour + ":" + min;
+		</script>
+			<hr color= "gray">
+		<br />
+
+    </div>
+
+	<div class="container">
+        <div class="row">
+             <div class="col-xl"  style="background-color:black; font-size: 3rem; color: white;">
+
+			<iframe src="./radiolist.html" width="1000" height="500" frameborder="0"></iframe>
+
+            </div>
+
+        <div class="col col-sm-2"  style="background-color:black; font-size: 3rem; color: white; vertical-align: middle;">
+	<center>
+			<iframe src="./mcs.html" width="200" height="500" frameborder="0"></iframe>
+        </center>
+        </div>
+    </div>
+
+    </body>
+
+</html>

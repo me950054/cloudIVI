@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 
@@ -20,56 +20,76 @@
 
     <body style="background-color:black; color:white;">
         
-	<center>
 
-            <div id="header">
+    <div id="header" style="font-size: 3rem; color: white; text-align: right">
 
+		<p id="eid_date">aaaaaaaaa</p>
+		<script>
+			let d = new Date();
+
+			var hour = d.getHours();
+			var min = d.getMinutes();
+ 
+			document.getElementById('eid_date').innerHTML = hour + ":" + min;
+		</script>
+			<hr color= "gray">
 		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
+
+    </div>
+
+	<div class="container">
+        <div class="row">
+             <div class="col-xl"  style="background-color:black; font-size: 3rem; color: white;">
+
+    	<center>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.59941783799!2d139.7227091582363!3d35.67210577398961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c830e7996e9%3A0xd58db013f7a0d0b8!2z44Ob44Oz44OA6Z2S5bGx44OT44Or!5e0!3m2!1sja!2sjp!4v1644561596056!5m2!1sja!2sjp" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    	</center>
 
             </div>
 
-            <div id="map">
-
-                MAP
-
-            </div>
-
-            <div id="button">
-
-		 <button id="t6" class="btn btn-secondary tile" onclick="pushed(this.id)" >
+      <div class="col col-sm-2"  style="background-color:black; font-size: 3rem; color: white; vertical-align: middle;">
+    	<center>
+      <table style="width: 100%;">
+      <tbody>
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t6" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
 			<i class="bi-house-door" style="font-size: 4rem; color: white;"></i>
+		 </button>
+          </td>
+          </tr>
+
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t6" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-arrow-return-left" style="font-size: 4rem; color: white;"></i>
 		</button>
-            </div>
+          </td>
+          </tr>
 
-            <div id="footer">
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t4" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-google" style="font-size: 4rem; color: white;"></i>
+		</button>
+          </td>
+          </tr>
 
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t0" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-geo-alt-fill" style="font-size: 4rem; color: white;"></i>
+		</button>
+          </td>
+          </tr>
 
-            </div>
+      </tbody>
+      </table>
+    	</center>
+      </div>
 
-        </center>
+      </div>
+      </div>
 
     </body>
 

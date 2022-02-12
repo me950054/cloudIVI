@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 
@@ -20,57 +20,105 @@
 
     <body style="background-color:black; color:white;">
         
-	<center>
 
-            <div id="header">
+    <div id="header" style="font-size: 3rem; color: white; text-align: right">
 
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
+		<p id="eid_date">aaaaaaaaa</p>
+		<script>
+			let d = new Date();
+
+			var hour = d.getHours();
+			var min = d.getMinutes();
+ 
+			document.getElementById('eid_date').innerHTML = hour + ":" + min;
+		</script>
+			<hr color= "gray">
+
+	</div>
+	<div class="container">
+
+<table id="table1" style="width: 100%; border:solid; border-width:thin; border-color:gray;">
+  <tbody>
+    <tr>
+      <td  id="btn_AM"  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; border:solid; border-width:thin; border-color:gray;" onclick="clickAM()">
+        AM</td>
+      <td  id="btn_FM"  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; border:solid; border-width:thin; border-color:gray;" onclick="clickFM()">
+        FM</td>
+      <td  id="btn_TI" style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center; border:solid; border-width:thin; border-color:gray;" onclick="clickTI()">
+        交通情報</td>
+    </tr>
+  </tbody>
+</table>
+	</div>
+
+	<div class="container">
+        <div class="row">
+             <div class="col-xl"  style="background-color:black; font-size: 3rem; color: white;">
+
+			<!-- <iframe src="./radiolist.html" width="1000" height="500" frameborder="0"></iframe> -->
+            <!-- <iframe src="./radiolist.html" width="1000" height="500" name="Change" scrolling="auto" frameborder="0"></iframe> -->
+            <iframe src="./radiolist.html" id="cFrame" width="1000" height="500" frameborder="0"></iframe>
+            </iframe>
 
             </div>
 
-            <div id="radio">
-
-                RADIO
-
-            </div>
-
-            <div id="button">
-
-		 <button id="t6" class="btn btn-secondary tile" onclick="pushed(this.id)" >
+      <div class="col col-sm-2"  style="background-color:black; font-size: 3rem; color: white; vertical-align: middle;">
+      <center>
+      <table style="width: 100%;">
+      <tbody>
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t6" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
 			<i class="bi-house-door" style="font-size: 4rem; color: white;"></i>
+		 </button>
+          </td>
+          </tr>
+
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t6" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-arrow-return-left" style="font-size: 4rem; color: white;"></i>
 		</button>
-            </div>
+          </td>
+          </tr>
 
-            <div id="footer">
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t4" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-google" style="font-size: 4rem; color: white;"></i>
+		</button>
+          </td>
+          </tr>
 
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
+          <tr  style="width:10%;border:1px solid #000000; font-size: 3rem; color: white; text-align: center;">
+          <td>
+		 <button id="t0" class="btn btn-secondary tile_S" onclick="pushed(this.id)" >
+			<i class="bi-geo-alt-fill" style="font-size: 4rem; color: white;"></i>
+		</button>
+          </td>
+          </tr>
+      </tbody>
+      </table>
+    	</center>
+      </div>
 
-            </div>
-
-        </center>
+      </div>
 
     </body>
+
+<script>
+    function clickAM() {
+        document.getElementById("cFrame").src = "./radiolistam.html";
+     }
+
+    function clickFM() {
+        document.getElementById("cFrame").src = "./radiolist.html";
+  }
+
+    function clickTI() {
+        document.getElementById("cFrame").src = "./radiolistti.html";
+  }
+
+</script>
 
 </html>
